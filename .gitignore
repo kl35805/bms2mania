@@ -1,0 +1,25 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# VSCode / Java 확장이 만드는 파일
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+bin/
+.classpath
+.project
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 로컬 테스트용 실제 BMS(저작물), 변환 결과
+samples/
+output/
