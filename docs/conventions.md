@@ -112,7 +112,15 @@ chore: .gitignore에 samples 폴더 추가
 
 ## 4. 이슈와 PR
 
-- **이슈 제목**: 무엇을 할지 한 줄로 쓴다. 예: `BMS 파서 구현`
+- **이슈 양식**: `.github/ISSUE_TEMPLATE/`의 양식을 사용한다.
+
+  | 양식 | 제목 접두어 | 라벨 | 브랜치 타입 |
+  |---|---|---|---|
+  | 기능 추가 | `[Feat]` | enhancement | `feat/` |
+  | 버그 수정 | `[Fix]` | bug | `fix/` |
+  | 기타 작업 | `[Refactor]` `[Test]` `[Docs]` `[Build]` `[Chore]` | 필요 시 | `refactor/` `test/` `docs/` `build/` `chore/` |
+
+- **이슈 제목**: `[접두어] 무엇을 할지 한 줄`로 쓴다. 예: `[Feat] BMS 파서 구현`
 - **PR 제목**: 커밋 메시지 형식을 따른다. 예: `feat(bms): BMS 파서 구현`
 - **PR 본문**
   - 무엇을 바꿨는지
