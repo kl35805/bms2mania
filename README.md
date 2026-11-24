@@ -22,6 +22,20 @@
 - JDK 25
 - ffmpeg
 
+## 빌드 및 실행
+
+Gradle Wrapper를 사용하므로 Gradle을 따로 설치할 필요가 없습니다. JDK 25만 있으면 됩니다.
+
+```bash
+# Windows
+gradlew build        # 빌드 + 테스트
+gradlew :app:run     # 프로그램 실행
+
+# macOS / Linux
+./gradlew build
+./gradlew :app:run
+```
+
 ## 라이선스
 
 추후 결정
