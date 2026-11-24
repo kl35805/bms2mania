@@ -1,3 +1,3 @@
 rootProject.name = "bms2mania"
 
-include("core")
+include("core", "app")
