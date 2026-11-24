@@ -10,7 +10,7 @@
 | 항목 | 내용 |
 |---|---|
 | 프로그램 이름 | bms2mania |
-| 패키지 | `io.github.<깃허브아이디>.bms2mania` |
+| 패키지 | `io.github.kl35805.bms2mania` |
 | 언어 / 런타임 | Java (JDK 25 LTS) |
 | GUI | JavaFX 25 |
 | 빌드 | Gradle (Kotlin DSL, `build.gradle.kts`) |
