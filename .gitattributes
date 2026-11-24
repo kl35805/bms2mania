@@ -1,0 +1,22 @@
+# 기본: 텍스트 파일은 저장소와 작업 폴더 모두 LF
+* text=auto eol=lf
+
+# Windows 배치 파일은 CRLF여야 실행됨
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# BMS 파일은 바이트 그대로 보존 (해시·Shift_JIS 인코딩이 바뀌면 안 됨)
+*.bms binary
+*.bme binary
+*.bml binary
+
+# 바이너리
+*.jar binary
+*.png binary
+*.jpg binary
+*.bmp binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.osz binary
+*.zip binary

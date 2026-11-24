@@ -53,7 +53,7 @@ bms2mania/
 
 ## 3. core 모듈 패키지
 
-기준 패키지: `io.github.<깃허브아이디>.bms2mania`
+기준 패키지: `io.github.kl35805.bms2mania`
 
 | 패키지 | 책임 | 주요 클래스 (안) |
 |---|---|---|
@@ -106,18 +106,40 @@ bms2mania/
 
 ---
 
-## 6. 외부 라이브러리 (안)
+## 6. 빌드 구성과 외부 라이브러리
 
-| 용도 | 후보 |
-|---|---|
-| GUI | JavaFX + Gradle 플러그인 `org.openjfx.javafxplugin` |
-| JSON (난이도표, 캐시, 설정) | Jackson |
-| 인코딩 판별 | juniversalchardet |
-| 테스트 | JUnit |
-| HTTP | JDK 내장 `HttpClient` |
+### 빌드 구성
+
+```
+bms2mania/
+├── settings.gradle.kts           모듈 등록 (core, app)
+├── gradle/
+│   ├── libs.versions.toml        버전 카탈로그 (라이브러리·플러그인 버전)
+│   └── wrapper/                  Gradle Wrapper
+├── buildSrc/src/main/kotlin/
+│   └── bms2mania.java-conventions.gradle.kts   공통 설정 (JDK 25 toolchain, UTF-8, JUnit)
+├── core/build.gradle.kts         java-library + 공통 설정
+└── app/build.gradle.kts          application + JavaFX 플러그인 + 공통 설정, core 의존
+```
+
+- 공통 설정은 루트 `subprojects {}` 대신 **컨벤션 플러그인**(`buildSrc`)으로 공유한다. Gradle 권장 방식이다.
+- 버전은 `gradle/libs.versions.toml`에서만 관리한다.
+  - 버전 키가 다른 키의 접두어가 되지 않게 짓는다. 예: `javafx`와 `javafx-plugin`을 같이 쓰면 `libs.versions.javafx`가 값이 아닌 묶음이 된다.
+- app의 실행 시작점은 `Application`을 상속하지 않는 `Launcher` 클래스다. IDE 실행이나 단일 jar 실행에서 JavaFX 런타임 오류를 피하기 위해서다.
+
+### 외부 라이브러리
+
+| 용도 | 라이브러리 | 버전 | 상태 |
+|---|---|---|---|
+| 빌드 | Gradle (Wrapper) | 9.9.1 | 적용 |
+| GUI | JavaFX + `org.openjfx.javafxplugin` | 25.0.5.1 / 0.1.0 | 적용 |
+| 테스트 | JUnit (BOM) | 6.1.3 | 적용 |
+| JSON (난이도표, 캐시, 설정) | Jackson | – | 예정 |
+| 인코딩 판별 | juniversalchardet | – | 예정 |
+| HTTP | JDK 내장 `HttpClient` | – | 예정 |
 
 - 캐시(스캔 결과, 난이도표)와 설정은 **JSON 파일**로 저장한다. SQLite는 MVP 규모에 필요하지 않다.
-- 정확한 버전은 의존성을 추가하는 시점에 확인한다.
+- "예정" 항목의 버전은 의존성을 추가하는 시점에 확인한다.
 
 ---
 

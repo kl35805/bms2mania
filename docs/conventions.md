@@ -6,8 +6,8 @@ bms2mania의 패키지, 브랜치, 커밋, PR 규칙입니다.
 
 ## 1. 패키지
 
-- 기준 패키지: `io.github.<깃허브아이디>.bms2mania`
-- `io.github.<깃허브아이디>`는 GitHub 계정이 보장하는 네임스페이스라 다른 프로젝트와 이름이 겹치지 않는다. 나중에 Maven Central 배포 시에도 그대로 쓸 수 있다.
+- 기준 패키지: `io.github.kl35805.bms2mania`
+- `io.github.kl35805`는 GitHub 계정이 보장하는 네임스페이스라 다른 프로젝트와 이름이 겹치지 않는다. 나중에 Maven Central 배포 시에도 그대로 쓸 수 있다.
 - 하위 패키지는 [architecture.md](./architecture.md)의 패키지 구성을 따른다.
   - `bms`, `chart`, `osu`, `audio`, `table`, `library`, `convert`, `config`, `common`
 
